@@ -26,10 +26,7 @@ const io = initSocket(server); app.set('io', io);
 
 // Security middleware
 app.use(helmet());
-app.use(cors({
-  origin: process.env.CLIENT_URL || 'http://localhost:5173',
-  credentials: true,
-}));
+app.use(cors({ origin: function(origin, callback) { callback(null, true); }, credentials: true }));
 
 // Rate limiting
 const limiter = rateLimit({
@@ -82,4 +79,5 @@ server.listen(PORT, () => {
 });
 
 module.exports = { app, server };
+
 
