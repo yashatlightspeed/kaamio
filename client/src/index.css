@@ -1,0 +1,126 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    scrollbar-width: thin;
+    scrollbar-color: #3d4562 transparent;
+  }
+  *::-webkit-scrollbar {
+    width: 5px;
+    height: 5px;
+  }
+  *::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  *::-webkit-scrollbar-thumb {
+    background: #3d4562;
+    border-radius: 3px;
+  }
+  body {
+    font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+    background-color: #0f1117;
+    color: #e2e8f0;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-brand-600 hover:bg-brand-700 text-white font-semibold px-4 py-2 rounded-lg transition-all duration-200 hover:shadow-glow disabled:opacity-50 disabled:cursor-not-allowed active:scale-95;
+  }
+  .btn-secondary {
+    @apply bg-surface-700 hover:bg-surface-600 text-white font-medium px-4 py-2 rounded-lg transition-all duration-200 border border-white/5 disabled:opacity-50;
+  }
+  .btn-ghost {
+    @apply text-slate-400 hover:text-white hover:bg-surface-700 font-medium px-4 py-2 rounded-lg transition-all duration-200;
+  }
+  .btn-danger {
+    @apply bg-red-600/20 hover:bg-red-600/30 text-red-400 font-medium px-4 py-2 rounded-lg transition-all duration-200 border border-red-500/20;
+  }
+  .input-field {
+    @apply w-full bg-surface-800 border border-white/10 rounded-lg px-4 py-2.5 text-white placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-brand-500/50 focus:border-brand-500 transition-all duration-200;
+  }
+  .card {
+    @apply bg-surface-800 border border-white/5 rounded-xl shadow-card;
+  }
+  .card-hover {
+    @apply card hover:border-brand-500/30 hover:shadow-glow-sm transition-all duration-200;
+  }
+  .badge {
+    @apply inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-xs font-semibold;
+  }
+  .sidebar-link {
+    @apply flex items-center gap-3 px-3 py-2.5 rounded-lg text-slate-400 hover:text-white hover:bg-surface-700 transition-all duration-200 font-medium text-sm;
+  }
+  .sidebar-link.active {
+    @apply bg-brand-600/20 text-brand-400 border border-brand-500/20;
+  }
+  .section-title {
+    @apply text-lg font-bold text-white;
+  }
+  .label {
+    @apply block text-sm font-medium text-slate-300 mb-1.5;
+  }
+  .divider {
+    @apply border-t border-white/5;
+  }
+  .glass {
+    @apply bg-white/5 backdrop-blur-sm border border-white/10;
+  }
+  .priority-low { @apply bg-emerald-500/15 text-emerald-400 border border-emerald-500/20; }
+  .priority-medium { @apply bg-amber-500/15 text-amber-400 border border-amber-500/20; }
+  .priority-high { @apply bg-orange-500/15 text-orange-400 border border-orange-500/20; }
+  .priority-critical { @apply bg-red-500/15 text-red-400 border border-red-500/20; }
+  .status-todo { @apply bg-slate-500/15 text-slate-400 border border-slate-500/20; }
+  .status-in-progress { @apply bg-blue-500/15 text-blue-400 border border-blue-500/20; }
+  .status-review { @apply bg-yellow-500/15 text-yellow-400 border border-yellow-500/20; }
+  .status-completed { @apply bg-emerald-500/15 text-emerald-400 border border-emerald-500/20; }
+}
+
+/* Gradient text */
+.gradient-text {
+  background: linear-gradient(135deg, #a78bfa 0%, #7c3aed 50%, #4f46e5 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Page background pattern */
+.bg-grid {
+  background-image: radial-gradient(rgba(124, 58, 237, 0.1) 1px, transparent 1px);
+  background-size: 32px 32px;
+}
+
+/* Glow orb */
+.glow-orb {
+  position: fixed;
+  border-radius: 50%;
+  filter: blur(120px);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Custom select */
+select option {
+  background-color: #1e2535;
+  color: white;
+}
+
+/* Kanban column */
+.kanban-col {
+  min-height: 200px;
+}
+
+/* Drag over state */
+.drag-over {
+  @apply ring-2 ring-brand-500/50 bg-brand-500/5;
+}
+
+/* Toast customization */
+.toast-custom {
+  background: #1e2535 !important;
+  color: #e2e8f0 !important;
+  border: 1px solid rgba(255,255,255,0.08) !important;
+  border-radius: 10px !important;
+}
